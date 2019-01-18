@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/SCH/CLionProjects/json_tutorial01/leptjson.c" "C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/CMakeFiles/leptjson.dir/leptjson.c.obj"
+  "C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/leptjson.c" "C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/CMakeFiles/leptjson.dir/leptjson.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

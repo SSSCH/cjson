@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug"/>
+				<Option working_dir="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug"/>
+				<Option working_dir="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="leptjson">
-				<Option output="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/libleptjson.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug"/>
+				<Option output="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/libleptjson.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="D:/software/clion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 leptjson"/>
-					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 leptjson"/>
+					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="leptjson/fast">
-				<Option output="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/libleptjson.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug"/>
+				<Option output="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/libleptjson.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -63,15 +63,15 @@
 					<Add directory="D:/software/clion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 leptjson/fast"/>
-					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 leptjson/fast"/>
+					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="json_tutorial01">
-				<Option output="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/json_tutorial01.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug"/>
+				<Option output="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/json_tutorial01.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -84,15 +84,15 @@
 					<Add directory="D:/software/clion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 json_tutorial01"/>
-					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 json_tutorial01"/>
+					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="json_tutorial01/fast">
-				<Option output="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/json_tutorial01.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug"/>
+				<Option output="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/json_tutorial01.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -105,35 +105,35 @@
 					<Add directory="D:/software/clion/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 json_tutorial01/fast"/>
-					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 json_tutorial01/fast"/>
+					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug"/>
+				<Option working_dir="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/software/clion/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/SCH/CLionProjects/json_tutorial01/leptjson.c">
+		<Unit filename="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/leptjson.c">
 			<Option target="leptjson"/>
 			<Option target="json_tutorial01"/>
 		</Unit>
-		<Unit filename="C:/Users/SCH/CLionProjects/json_tutorial01/leptjson.h">
+		<Unit filename="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/leptjson.h">
 			<Option target="leptjson"/>
 			<Option target="json_tutorial01"/>
 		</Unit>
-		<Unit filename="C:/Users/SCH/CLionProjects/json_tutorial01/test.c">
+		<Unit filename="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/test.c">
 			<Option target="json_tutorial01"/>
 		</Unit>
-		<Unit filename="C:/Users/SCH/CLionProjects/json_tutorial01/CMakeLists.txt">
+		<Unit filename="C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial01/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -23,19 +23,19 @@ static int test_pass_count = 0;
 static void test_parse_null(){
     type_value v;
     v.type = LEPT_NULL;
-    EXPECT_EQ_INT(LEPT_PARSE_ok, leptJson_parse(&v, "null"));
+    EXPECT_EQ_INT(LEPT_PARSE_ok, leptJson_parse(&v, "null     "));
     EXPECT_EQ_INT(LEPT_NULL,get_leptJsonType(&v));
 }
 static void test_parse_false(){
     type_value v;
     v.type = LEPT_FALSE;
-    EXPECT_EQ_INT(LEPT_PARSE_ok, leptJson_parse(&v, "false"));
+    EXPECT_EQ_INT(LEPT_PARSE_ok, leptJson_parse(&v, "false  "));
     EXPECT_EQ_INT(LEPT_FALSE,get_leptJsonType(&v));
 }
 static void test_parse_ture(){
     type_value v;
     v.type = LEPT_TRUE;
-    EXPECT_EQ_INT(LEPT_PARSE_ok, leptJson_parse(&v, "true"));
+    EXPECT_EQ_INT(LEPT_PARSE_ok, leptJson_parse(&v, "true  "));
     EXPECT_EQ_INT(LEPT_TRUE,get_leptJsonType(&v));
 }
 static void test_parse_expect_value(){

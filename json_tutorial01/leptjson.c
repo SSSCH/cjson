@@ -31,9 +31,17 @@ static int parse_value_null(type_value *result, inputJson *jsonContext){
             result->type = LEPT_NULL;
             return LEPT_PARSE_ok;
         }
-        else
-            return LEPT_PARSE_ROOT_NOOT_SINGULAR;
+        else{
+            jsonContext->json +=3;
+            lept_parse_whitespace(jsonContext);
+            if(jsonContext->json[0] == '\0'){
+                result->type = LEPT_NULL;
+                return LEPT_PARSE_ok;
+            }
 
+            else
+                return LEPT_PARSE_ROOT_NOOT_SINGULAR;
+        }
     }
     else
         return LEPT_PARSE_INVALID_VALUE;
@@ -45,8 +53,17 @@ static int parse_value_false(type_value *result, inputJson *jsonContext){
             jsonContext->json +=4;
             result->type = LEPT_FALSE;
             return LEPT_PARSE_ok;
-        } else
-            return LEPT_PARSE_ROOT_NOOT_SINGULAR;
+        } else{
+            jsonContext->json +=4;
+            lept_parse_whitespace(jsonContext);
+            if(jsonContext->json[0] == '\0'){
+                result->type = LEPT_FALSE;
+                return LEPT_PARSE_ok;
+            }
+
+            else
+                return LEPT_PARSE_ROOT_NOOT_SINGULAR;
+        }
     }
     else
         return LEPT_PARSE_INVALID_VALUE;
@@ -59,8 +76,17 @@ static int parse_value_true(type_value *result, inputJson *jsonContext){
             result->type = LEPT_TRUE;
             return LEPT_PARSE_ok;
         }
-        else
-            return LEPT_PARSE_ROOT_NOOT_SINGULAR;
+        else{
+            jsonContext->json +=3;
+            lept_parse_whitespace(jsonContext);
+            if(jsonContext->json[0] == '\0'){
+                result->type = LEPT_TRUE;
+                return LEPT_PARSE_ok;
+            }
+
+            else
+                return LEPT_PARSE_ROOT_NOOT_SINGULAR;
+        }
     }
     else
         return LEPT_PARSE_INVALID_VALUE;

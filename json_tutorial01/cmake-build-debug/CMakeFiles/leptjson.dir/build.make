@@ -42,10 +42,10 @@ RM = "D:\software\clion\CLion 2018.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\SCH\CLionProjects\json_tutorial01
+CMAKE_SOURCE_DIR = C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\SCH\CLionProjects\json_tutorial01\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/leptjson.dir/depend.make
@@ -58,16 +58,16 @@ include CMakeFiles/leptjson.dir/flags.make
 
 CMakeFiles/leptjson.dir/leptjson.c.obj: CMakeFiles/leptjson.dir/flags.make
 CMakeFiles/leptjson.dir/leptjson.c.obj: ../leptjson.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\SCH\CLionProjects\json_tutorial01\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/leptjson.dir/leptjson.c.obj"
-	D:\software\clion\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\leptjson.dir\leptjson.c.obj   -c C:\Users\SCH\CLionProjects\json_tutorial01\leptjson.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/leptjson.dir/leptjson.c.obj"
+	D:\software\clion\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\leptjson.dir\leptjson.c.obj   -c C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01\leptjson.c
 
 CMakeFiles/leptjson.dir/leptjson.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/leptjson.dir/leptjson.c.i"
-	D:\software\clion\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\SCH\CLionProjects\json_tutorial01\leptjson.c > CMakeFiles\leptjson.dir\leptjson.c.i
+	D:\software\clion\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01\leptjson.c > CMakeFiles\leptjson.dir\leptjson.c.i
 
 CMakeFiles/leptjson.dir/leptjson.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/leptjson.dir/leptjson.c.s"
-	D:\software\clion\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\SCH\CLionProjects\json_tutorial01\leptjson.c -o CMakeFiles\leptjson.dir\leptjson.c.s
+	D:\software\clion\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01\leptjson.c -o CMakeFiles\leptjson.dir\leptjson.c.s
 
 # Object files for target leptjson
 leptjson_OBJECTS = \
@@ -79,7 +79,7 @@ leptjson_EXTERNAL_OBJECTS =
 libleptjson.a: CMakeFiles/leptjson.dir/leptjson.c.obj
 libleptjson.a: CMakeFiles/leptjson.dir/build.make
 libleptjson.a: CMakeFiles/leptjson.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\SCH\CLionProjects\json_tutorial01\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libleptjson.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libleptjson.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\leptjson.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\leptjson.dir\link.txt --verbose=$(VERBOSE)
 
@@ -93,6 +93,6 @@ CMakeFiles/leptjson.dir/clean:
 .PHONY : CMakeFiles/leptjson.dir/clean
 
 CMakeFiles/leptjson.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\SCH\CLionProjects\json_tutorial01 C:\Users\SCH\CLionProjects\json_tutorial01 C:\Users\SCH\CLionProjects\json_tutorial01\cmake-build-debug C:\Users\SCH\CLionProjects\json_tutorial01\cmake-build-debug C:\Users\SCH\CLionProjects\json_tutorial01\cmake-build-debug\CMakeFiles\leptjson.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01 C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01 C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01\cmake-build-debug C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01\cmake-build-debug C:\Users\SCH\CLionProjects\Json_Tutorial\json_tutorial01\cmake-build-debug\CMakeFiles\leptjson.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/leptjson.dir/depend
 
