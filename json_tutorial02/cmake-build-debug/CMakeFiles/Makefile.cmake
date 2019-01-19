@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.13.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.13.2/CMakeRCCompiler.cmake"
   "CMakeFiles/3.13.2/CMakeSystem.cmake"
+  "../src/CMakeLists.txt"
   "D:/software/clion/CLion 2018.3.3/bin/cmake/win/share/cmake-3.13/Modules/CMakeCInformation.cmake"
   "D:/software/clion/CLion 2018.3.3/bin/cmake/win/share/cmake-3.13/Modules/CMakeCXXInformation.cmake"
   "D:/software/clion/CLion 2018.3.3/bin/cmake/win/share/cmake-3.13/Modules/CMakeCommonLanguageInclude.cmake"
@@ -47,10 +48,11 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "bin/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/json_tutorial02.dir/DependInfo.cmake"
-  "CMakeFiles/leptjson.dir/DependInfo.cmake"
+  "bin/CMakeFiles/json_tutorial02.dir/DependInfo.cmake"
+  "bin/CMakeFiles/leptjson.dir/DependInfo.cmake"
   )

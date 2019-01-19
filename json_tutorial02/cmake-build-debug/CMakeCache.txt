@@ -242,10 +242,10 @@ json_tutorial01_BINARY_DIR:STATIC=C:/Users/SCH/CLionProjects/Json_Tutorial/json_
 json_tutorial01_SOURCE_DIR:STATIC=C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial02
 
 //Value Computed by CMake
-json_tutorial02_BINARY_DIR:STATIC=C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial02/cmake-build-debug
+json_tutorial02_BINARY_DIR:STATIC=C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial02/cmake-build-debug/bin
 
 //Value Computed by CMake
-json_tutorial02_SOURCE_DIR:STATIC=C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial02
+json_tutorial02_SOURCE_DIR:STATIC=C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial02/src
 
 
 ########################
@@ -354,7 +354,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -119,7 +119,7 @@ json_tutorial02: cmake_check_build_system
 
 # fast build rule for target.
 json_tutorial02/fast:
-	$(MAKE) -f CMakeFiles\json_tutorial02.dir\build.make CMakeFiles/json_tutorial02.dir/build
+	$(MAKE) -f bin\CMakeFiles\json_tutorial02.dir\build.make bin/CMakeFiles/json_tutorial02.dir/build
 .PHONY : json_tutorial02/fast
 
 #=============================================================================
@@ -132,65 +132,8 @@ leptjson: cmake_check_build_system
 
 # fast build rule for target.
 leptjson/fast:
-	$(MAKE) -f CMakeFiles\leptjson.dir\build.make CMakeFiles/leptjson.dir/build
+	$(MAKE) -f bin\CMakeFiles\leptjson.dir\build.make bin/CMakeFiles/leptjson.dir/build
 .PHONY : leptjson/fast
-
-leptjson.obj: leptjson.c.obj
-
-.PHONY : leptjson.obj
-
-# target to build an object file
-leptjson.c.obj:
-	$(MAKE) -f CMakeFiles\json_tutorial02.dir\build.make CMakeFiles/json_tutorial02.dir/leptjson.c.obj
-	$(MAKE) -f CMakeFiles\leptjson.dir\build.make CMakeFiles/leptjson.dir/leptjson.c.obj
-.PHONY : leptjson.c.obj
-
-leptjson.i: leptjson.c.i
-
-.PHONY : leptjson.i
-
-# target to preprocess a source file
-leptjson.c.i:
-	$(MAKE) -f CMakeFiles\json_tutorial02.dir\build.make CMakeFiles/json_tutorial02.dir/leptjson.c.i
-	$(MAKE) -f CMakeFiles\leptjson.dir\build.make CMakeFiles/leptjson.dir/leptjson.c.i
-.PHONY : leptjson.c.i
-
-leptjson.s: leptjson.c.s
-
-.PHONY : leptjson.s
-
-# target to generate assembly for a file
-leptjson.c.s:
-	$(MAKE) -f CMakeFiles\json_tutorial02.dir\build.make CMakeFiles/json_tutorial02.dir/leptjson.c.s
-	$(MAKE) -f CMakeFiles\leptjson.dir\build.make CMakeFiles/leptjson.dir/leptjson.c.s
-.PHONY : leptjson.c.s
-
-test.obj: test.c.obj
-
-.PHONY : test.obj
-
-# target to build an object file
-test.c.obj:
-	$(MAKE) -f CMakeFiles\json_tutorial02.dir\build.make CMakeFiles/json_tutorial02.dir/test.c.obj
-.PHONY : test.c.obj
-
-test.i: test.c.i
-
-.PHONY : test.i
-
-# target to preprocess a source file
-test.c.i:
-	$(MAKE) -f CMakeFiles\json_tutorial02.dir\build.make CMakeFiles/json_tutorial02.dir/test.c.i
-.PHONY : test.c.i
-
-test.s: test.c.s
-
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.c.s:
-	$(MAKE) -f CMakeFiles\json_tutorial02.dir\build.make CMakeFiles/json_tutorial02.dir/test.c.s
-.PHONY : test.c.s
 
 # Help Target
 help:
@@ -199,15 +142,9 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... rebuild_cache
 	@echo ... json_tutorial02
 	@echo ... leptjson
-	@echo ... rebuild_cache
-	@echo ... leptjson.obj
-	@echo ... leptjson.i
-	@echo ... leptjson.s
-	@echo ... test.obj
-	@echo ... test.i
-	@echo ... test.s
 .PHONY : help
 
 
