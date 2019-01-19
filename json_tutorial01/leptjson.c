@@ -18,6 +18,7 @@ static int lept_parse_whitespace(inputJson *c){
     //空格，制表符，换行符， 回车符
     while(*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r' )
         p++;
+    //c->json = p等价于 (*c).json = p
     c->json = p;
     assert(c->json!=NULL);
     return 0;
@@ -25,12 +26,14 @@ static int lept_parse_whitespace(inputJson *c){
 
 static int parse_value_null(type_value *result, inputJson *jsonContext){
     EXPECT(jsonContext, 'n');
-    if(jsonContext->json[0] == 'u' && jsonContext->json[1] == 'l' && jsonContext->json[2] == 'l'){
-        if(jsonContext->json[3] == '\0'){
+    //jsonContext->json[0] = *jsonContext->json = *(jsonContext->json)
+    //jsonContext->json[2] = *(jsonContext->json+2)
+    if(*(jsonContext->json) == 'u' && *(jsonContext->json+1) == 'l' && *(jsonContext->json+2) == 'l'){
+        //if(jsonContext->json[3] == '\0'){
             jsonContext->json +=3;
             result->type = LEPT_NULL;
             return LEPT_PARSE_ok;
-        }
+        /*}
         else{
             jsonContext->json +=3;
             lept_parse_whitespace(jsonContext);
@@ -41,7 +44,7 @@ static int parse_value_null(type_value *result, inputJson *jsonContext){
 
             else
                 return LEPT_PARSE_ROOT_NOOT_SINGULAR;
-        }
+        }*/
     }
     else
         return LEPT_PARSE_INVALID_VALUE;
@@ -49,11 +52,11 @@ static int parse_value_null(type_value *result, inputJson *jsonContext){
 static int parse_value_false(type_value *result, inputJson *jsonContext){
     EXPECT(jsonContext, 'f');
     if(jsonContext->json[0] == 'a' && jsonContext->json[1] == 'l' && jsonContext->json[2] == 's' && jsonContext->json[3] == 'e'){
-        if(jsonContext->json[4] == '\0'){
+        //if(jsonContext->json[4] == '\0'){
             jsonContext->json +=4;
             result->type = LEPT_FALSE;
             return LEPT_PARSE_ok;
-        } else{
+        /*} else{
             jsonContext->json +=4;
             lept_parse_whitespace(jsonContext);
             if(jsonContext->json[0] == '\0'){
@@ -63,7 +66,7 @@ static int parse_value_false(type_value *result, inputJson *jsonContext){
 
             else
                 return LEPT_PARSE_ROOT_NOOT_SINGULAR;
-        }
+        }*/
     }
     else
         return LEPT_PARSE_INVALID_VALUE;
@@ -71,11 +74,11 @@ static int parse_value_false(type_value *result, inputJson *jsonContext){
 static int parse_value_true(type_value *result, inputJson *jsonContext){
     EXPECT(jsonContext, 't');
     if(jsonContext->json[0] == 'r' && jsonContext->json[1] == 'u' && jsonContext->json[2] == 'e'){
-        if(jsonContext->json[3] == '\0'){
+        //if(jsonContext->json[3] == '\0'){
             jsonContext->json +=3;
             result->type = LEPT_TRUE;
             return LEPT_PARSE_ok;
-        }
+        /*}
         else{
             jsonContext->json +=3;
             lept_parse_whitespace(jsonContext);
@@ -86,7 +89,7 @@ static int parse_value_true(type_value *result, inputJson *jsonContext){
 
             else
                 return LEPT_PARSE_ROOT_NOOT_SINGULAR;
-        }
+        }*/
     }
     else
         return LEPT_PARSE_INVALID_VALUE;
@@ -114,11 +117,22 @@ static int leptJson_parse_value(type_value *result, inputJson *jsonContext){
 //解析器
 int leptJson_parse(type_value *result, const char* json){
     assert(result != NULL);
+    int ret =0;
     inputJson v;
     v.json = json;
     result->type = LEPT_NULL;
     lept_parse_whitespace(&v);
-    return(leptJson_parse_value(result, &v));
+    if((ret=leptJson_parse_value(result, &v)) == LEPT_PARSE_ok){
+        lept_parse_whitespace(&v);
+        if(v.json[0] == '\0')
+            return ret;
+        else
+            result->type = LEPT_NULL;
+            return LEPT_PARSE_ROOT_NOOT_SINGULAR;
+
+    } else
+        return ret;
+    //return(leptJson_parse_value(result, &v));
 
 };
 

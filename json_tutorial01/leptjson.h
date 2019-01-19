@@ -4,14 +4,14 @@
 
 #ifndef JSON_TUTORIAL01_LEPTJSON_H
 #define JSON_TUTORIAL01_LEPTJSON_H
-//json type，只解析前三种
+//json type，只解析前三种,默认为LEPT_NULL,解析成功就更改为相应的格式
 typedef enum  {LEPT_NULL, LEPT_FALSE, LEPT_TRUE, LEPT_OBJECT, LEPT_ARRAY, LEPT_STRING, LEPT_NUMBER}lept_type;
 
 typedef struct {
     lept_type type;
 }type_value;
 
-//error type
+//return type
 enum  {
     LEPT_PARSE_ok = 0,
     LEPT_PARSE_EXPECT_VALUE, //内容为空
