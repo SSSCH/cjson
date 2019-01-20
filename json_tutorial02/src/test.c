@@ -52,7 +52,7 @@ static void TestPareseFuc(){
     test_parse_number(LEPT_NUMBER, "21342", LEPT_PARSE_OK);
     test_parse_number(LEPT_NUMBER, "2e+2", LEPT_PARSE_OK);
     test_parse_number(LEPT_INVALID, "000001", LEPT_PARSE_TYPE_ILLEGAL_NUMBER);
-
+    test_parse_number(LEPT_INVALID, "-9e75942379", LEPT_PARSE_TYPE_NUMBER_TOO_BIG);
     test_parse_error(LEPT_INVALID, "217 asd", LETP_PARSE_TYPE_NOT_SINGULAR);
     test_parse_error(LEPT_INVALID, "adfs", LEPT_PARSE_INVALID_VALUE);
     test_parse_error(LEPT_INVALID, "nulll", LETP_PARSE_TYPE_NOT_SINGULAR);

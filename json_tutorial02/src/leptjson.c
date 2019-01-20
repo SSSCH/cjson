@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <errno.h>
+#include <math.h>
 
 #define EXPECT_EQ(c, ch)     do{ assert(*c->json == (ch));c->json++; } while(0)
 typedef struct {
@@ -29,6 +31,7 @@ static int lept_parse_literal(LeptJsonResult *result, intput_json *inputJson, co
 }
 
 static int lept_parse_number(LeptJsonResult *result, intput_json *intputJson){
+    errno = 0;
     char * end;
     result->number = strtod(intputJson->json, &end);
     if(intputJson->json == end){//strtod 会在遇到非数字后将其后第一个字节的地址传入end，intputJson->josn == end说明一上来就不是数字
@@ -39,6 +42,10 @@ static int lept_parse_number(LeptJsonResult *result, intput_json *intputJson){
         if(intputJson->json[0] == '0' && intputJson->json[1]){ //c语言中字符常量是int型，c++中是char型。所以这边若是写出intputJson->json[0] == 0也不会报错，小心！！！
             result->leptjson_type = LEPT_INVALID;
             return LEPT_PARSE_TYPE_ILLEGAL_NUMBER;
+        }
+        if(errno == ERANGE && (result->number == HUGE_VAL || result->number == -HUGE_VAL)){
+            result->leptjson_type = LEPT_INVALID;
+            return LEPT_PARSE_TYPE_NUMBER_TOO_BIG;
         }
         intputJson->json = end;
         result->leptjson_type = LEPT_NUMBER;

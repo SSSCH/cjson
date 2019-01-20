@@ -19,7 +19,8 @@ typedef enum{
     LEPT_PARSE_NO_VALUE,
     LEPT_PARSE_INVALID_VALUE,
     LETP_PARSE_TYPE_NOT_SINGULAR,
-    LEPT_PARSE_TYPE_ILLEGAL_NUMBER
+    LEPT_PARSE_TYPE_ILLEGAL_NUMBER,
+    LEPT_PARSE_TYPE_NUMBER_TOO_BIG
 }RetType;
 //解析器
 int LeptJson_Parse(LeptJsonResult *result, const char *InputJson);
