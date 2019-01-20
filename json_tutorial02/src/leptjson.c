@@ -12,34 +12,22 @@ typedef struct {
     char *json;
 }intput_json;
 
+#define ISDIGIT(ch) ((ch) >= '0' && (ch) <= '9')
+#define ISDIGIT1TO9 ((ch) >= '1' && (ch) <= '9')
+static int lept_parse_literal(LeptJsonResult *result, intput_json *inputJson, const char *literal, LeptJsonType josnType ){
+    size_t i = 0; //ps，在c语言中数据长度，索引值最好使用“size_t”类型，而不是用int或者unsigned
+    EXPECT_EQ(inputJson, literal[0]);
+    for(i=0; literal[i+1]; i++){
+        if(inputJson->json[i] != literal[i+1]){ //注意：在EXPECT_EQ中，inputJson->json++，所以是从下标1开始判断
+            result->leptjson_type = LEPT_PARSE_INVALID_VALUE;
+            return LEPT_PARSE_INVALID_VALUE;
+        }
+    }
+    inputJson->json += i;
+    result->leptjson_type = josnType;
+    return LEPT_PARSE_OK;
+}
 
-static int lept_parse_null(LeptJsonResult *result,  intput_json *intputJson){
-    EXPECT_EQ(intputJson, 'n');
-    if(intputJson->json[0] == 'u' && intputJson->json[1] && 'l' || intputJson->json[2] == 'l'){
-        intputJson->json +=3;
-        result->leptjson_type = LEPT_NULL;
-        return LEPT_PARSE_OK;
-    } else
-        return LEPT_PARSE_INVALID_VALUE;
-}
-static int lept_parse_true(LeptJsonResult *result,  intput_json *intputJson){
-    EXPECT_EQ(intputJson, 't');
-    if(intputJson->json[0] == 'r' && intputJson->json[1] && 'u' || intputJson->json[2] == 'e'){
-        intputJson->json +=3;
-        result->leptjson_type = LEPT_TRUE;
-        return LEPT_PARSE_OK;
-    } else
-        return LEPT_PARSE_INVALID_VALUE;
-}
-static int lept_parse_false(LeptJsonResult *result,  intput_json *intputJson){
-    EXPECT_EQ(intputJson, 'f');
-    if(intputJson->json[0] == 'a' && intputJson->json[1] && 'l' || intputJson->json[2] == 's' || intputJson->json[3] == 'e'){
-        intputJson->json +=4;
-        result->leptjson_type = LEPT_FALSE;
-        return LEPT_PARSE_OK;
-    } else
-        return LEPT_PARSE_INVALID_VALUE;
-}
 static int lept_parse_number(LeptJsonResult *result, intput_json *intputJson){
     char * end;
     result->number = strtod(intputJson->json, &end);
@@ -48,6 +36,10 @@ static int lept_parse_number(LeptJsonResult *result, intput_json *intputJson){
         return LEPT_PARSE_INVALID_VALUE;
     }
     else{
+        if(intputJson->json[0] == '0' && intputJson->json[1]){ //c语言中字符常量是int型，c++中是char型。所以这边若是写出intputJson->json[0] == 0也不会报错，小心！！！
+            result->leptjson_type = LEPT_INVALID;
+            return LEPT_PARSE_TYPE_ILLEGAL_NUMBER;
+        }
         intputJson->json = end;
         result->leptjson_type = LEPT_NUMBER;
         return LEPT_PARSE_OK;
@@ -64,11 +56,14 @@ int lept_parse_whitespcae(intput_json *inputjson){
 static int lept_parse_value(LeptJsonResult *result, const intput_json *intputJson){
     switch (*(intputJson->json)){
         case 'n' :
-            return lept_parse_null(result, intputJson);
+            //return lept_parse_null(result, intputJson);
+            return lept_parse_literal(result,intputJson, "null", LEPT_NULL);
         case 't' :
-            return lept_parse_true(result, intputJson);
+            //return lept_parse_true(result, intputJson);
+            return lept_parse_literal(result,intputJson, "true", LEPT_TRUE);
         case 'f' :
-            return lept_parse_false(result, intputJson);
+            //return lept_parse_false(result, intputJson);
+            return lept_parse_literal(result,intputJson, "false", LEPT_FALSE);
         case '\0' :
             return LEPT_PARSE_NO_VALUE;
         default:
