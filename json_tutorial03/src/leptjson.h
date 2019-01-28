@@ -43,3 +43,5 @@ int GetParseResult(const LeptJsonResult *result);
 void lept_set_string(LeptJsonResult* leptJsonResult, const char* json, size_t len);
 //内存初始化
 void lept_free(LeptJsonResult* leptJsonResult);
+char* lept_get_string(LeptJsonResult* leptJsonResult);
+size_t lept_get_strlen(LeptJsonResult *leptJsonResult);

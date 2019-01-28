@@ -163,7 +163,7 @@ int GetParseResult(const LeptJsonResult *result){
     if(result->leptjson_type == LEPT_NUMBER)
         printf("number:%.17g.\n", result->number);
     if(result->leptjson_type == LEPT_STRING){
-        printf("leptjosn type:%d, string: %s, size：%d", result->leptjson_type, result->s.string, (int)result->s.len);
+        //printf("leptjosn type:%d, string: %s, size：%d", result->leptjson_type, result->s.string, (int)result->s.len);
     }
     return result->leptjson_type;
 }
@@ -185,7 +185,14 @@ void lept_set_string(LeptJsonResult* leptJsonResult, const char* json, size_t le
     leptJsonResult->s.len = len;
     leptJsonResult->s.string[len] = "\0";   //补上字符串结尾符
     leptJsonResult->leptjson_type = LEPT_STRING;
+}
 
-
+char* lept_get_string(LeptJsonResult* leptJsonResult){
+    assert(leptJsonResult != NULL && leptJsonResult->leptjson_type == LEPT_STRING && leptJsonResult->s.string != NULL);
+    return leptJsonResult->s.string;
+}
+size_t lept_get_strlen(LeptJsonResult* leptJsonResult){
+    assert(leptJsonResult != NULL && leptJsonResult->leptjson_type == LEPT_STRING && leptJsonResult->s.string != NULL);
+    return  leptJsonResult->s.len;
 }
 

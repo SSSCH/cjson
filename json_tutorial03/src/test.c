@@ -7,6 +7,8 @@
 static int test_count = 0;
 static int test_count_parsed = 0;
 
+static void test_parse_access_string();
+
 #define EXPECT_EQ_BASE(equality, expect, actual, object_format) \
         do{\
             test_count++;\
@@ -21,7 +23,16 @@ static int test_count_parsed = 0;
 #define EXPECT_EQ_actual(expect, actual, object_format)  EXPECT_EQ_BASE((expect) == (actual), expect, actual, object_format)
 #define LEPT_TYPE_INIT(v) do{(v)->leptjson_type = LEPT_NULL;}while(0)
 #define EXPECT_EQ_STRING(expect, actual, length) \
-                EXPECT_EQ_BASE(sizeof(expect)-1 == length && memcmp(expect, actual, length) == 0, expect, actual, %s)
+                EXPECT_EQ_BASE(sizeof(expect)-1 == length && memcmp(expect, actual, length) == 0, expect, actual, "%s")
+#define TEST_STRING(expect, actual) \
+                do{ \
+                    LeptJsonResult leptJsonResult; \
+                    LEPT_TYPE_INIT(&leptJsonResult); \
+                    EXPECT_EQ_actual(LEPT_PARSE_OK,LeptJson_Parse(&leptJsonResult, actual), "%d"); \
+                    EXPECT_EQ_actual(LEPT_STRING, GetParseResult(&leptJsonResult), "%d"); \
+                    EXPECT_EQ_STRING(expect, lept_get_string(&leptJsonResult), lept_get_strlen(&leptJsonResult)); \
+                    lept_free(&leptJsonResult); \
+                 } while(0)
 
 static void test_parse_character(LeptJsonType leptJsonType, char* string, RetType retType){
         LeptJsonResult leptjson;
@@ -45,13 +56,26 @@ static void test_parse_number(LeptJsonType leptJsonType, char* string, RetType r
     //lept_free(&leptjson);
 }
 
-static void test_parse_string(LeptJsonType leptJsonType, char* string, RetType retType){
-            LeptJsonResult leptJsonResult;
-            LEPT_TYPE_INIT(&leptJsonResult);
-            EXPECT_EQ_actual(retType,LeptJson_Parse(&leptJsonResult, string), "%d");
-            EXPECT_EQ_actual(leptJsonType, GetParseResult(&leptJsonResult), "%d");
-            lept_free(&leptJsonResult);
-        }
+static void test_parse_string(){
+            TEST_STRING("hello", "\"hello\"");
+            TEST_STRING("world", "\"world\"");
+            TEST_STRING("sfs", "\"sfs\"");
+            TEST_STRING("schsch", "\"schsch\"");
+
+}
+
+static void test_parse_access_string() {
+    LeptJsonResult leptJsonResult;
+    LEPT_TYPE_INIT(&leptJsonResult);
+    lept_set_string(&leptJsonResult, "hello", 5);
+    EXPECT_EQ_STRING("hello",lept_get_string(&leptJsonResult), lept_get_strlen(&leptJsonResult));
+
+    lept_set_string(&leptJsonResult, "world", 5);
+    EXPECT_EQ_STRING("world",lept_get_string(&leptJsonResult), lept_get_strlen(&leptJsonResult));
+
+    lept_set_string(&leptJsonResult, "", 0);
+    EXPECT_EQ_STRING("",lept_get_string(&leptJsonResult), lept_get_strlen(&leptJsonResult));
+}
 
 static void TestPareseFuc(){
     test_parse_character(LEPT_NULL, "null", LEPT_PARSE_OK);
@@ -72,9 +96,11 @@ static void TestPareseFuc(){
     test_parse_error(LEPT_INVALID, "nulll", LETP_PARSE_TYPE_NOT_SINGULAR);
     test_parse_error(LEPT_INVALID, "false     6", LETP_PARSE_TYPE_NOT_SINGULAR);
     test_parse_error(LEPT_INVALID, " ", LEPT_PARSE_NO_VALUE);
-    test_parse_string(LEPT_STRING, "\"hfflfjlls\"", LEPT_PARSE_OK);
+    test_parse_string();
+    test_parse_access_string();
 
 }
+
 
 int main() {
     TestPareseFuc();

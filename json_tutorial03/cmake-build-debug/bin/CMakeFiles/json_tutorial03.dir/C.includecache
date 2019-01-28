@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial03/src/leptjson.c
-leptjson.h
-C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial03/src/leptjson.h
-stdio.h
--
-stdlib.h
--
-assert.h
--
-errno.h
--
-math.h
--
-memory.h
--
-
 C:/Users/SCH/CLionProjects/Json_Tutorial/json_tutorial03/src/leptjson.h
 stdint.h
 -
