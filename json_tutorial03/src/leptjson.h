@@ -45,3 +45,7 @@ void lept_set_string(LeptJsonResult* leptJsonResult, const char* json, size_t le
 void lept_free(LeptJsonResult* leptJsonResult);
 char* lept_get_string(LeptJsonResult* leptJsonResult);
 size_t lept_get_strlen(LeptJsonResult *leptJsonResult);
+void lept_set_number(LeptJsonResult *leptJsonResult, double number);
+void lept_set_boolen(LeptJsonResult* leptJsonResult, LeptJsonType leptJsonType);
+double lept_get_number(LeptJsonResult* leptJsonResult);
+LeptJsonType lept_get_boolen(LeptJsonResult* leptJsonResult);

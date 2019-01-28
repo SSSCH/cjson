@@ -196,3 +196,27 @@ size_t lept_get_strlen(LeptJsonResult* leptJsonResult){
     return  leptJsonResult->s.len;
 }
 
+
+void lept_set_number(LeptJsonResult *leptJsonResult, double number) {
+    assert(leptJsonResult != NULL);
+    leptJsonResult->leptjson_type = LEPT_NUMBER;
+    leptJsonResult->number = number;
+}
+
+
+double lept_get_number(LeptJsonResult *leptJsonResult) {
+    assert(leptJsonResult != NULL && leptJsonResult->leptjson_type == LEPT_NUMBER);
+    return leptJsonResult->number;
+}
+
+void lept_set_boolen(LeptJsonResult *leptJsonResult, LeptJsonType leptJsonType) {
+    assert(leptJsonResult != NULL);
+    leptJsonResult->leptjson_type = leptJsonType;
+}
+
+
+
+LeptJsonType lept_get_boolen(LeptJsonResult* leptJsonResult){
+    assert(leptJsonResult != NULL);
+    return leptJsonResult->leptjson_type;
+}

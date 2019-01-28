@@ -14,7 +14,6 @@
     <list default="true" id="cbd44d63-08a6-4112-a584-1c82cb7c6583" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../json_tutorial02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../json_tutorial02/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../json_tutorial02/src/test.c" beforeDir="false" afterPath="$PROJECT_DIR$/../json_tutorial02/src/test.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/leptjson.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/leptjson.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/leptjson.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/leptjson.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.c" afterDir="false" />
@@ -29,17 +28,16 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            <state relative-caret-position="384">
+              <caret line="81" column="23" lean-forward="true" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
               <folding>
                 <element signature="e#0#2#0" />
                 <element signature="e#902#1241#0" />
                 <element signature="e#1242#1570#0" />
                 <element signature="e#1571#1899#0" />
-                <element signature="e#2348#2962#0" />
                 <element signature="e#3588#3779#0" />
               </folding>
             </state>
@@ -58,17 +56,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/leptjson.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="376">
+              <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/leptjson.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="179" column="5" selection-start-line="179" selection-start-column="5" selection-end-line="179" selection-end-column="5" />
+            <state relative-caret-position="169">
+              <caret line="210" column="5" selection-start-line="210" selection-start-column="5" selection-end-line="210" selection-end-column="5" />
               <folding>
                 <element signature="e#0#2#0" />
                 <element signature="e#473#578#0" />
@@ -180,12 +178,12 @@
       <workItem from="1548470564709" duration="5249000" />
       <workItem from="1548496695313" duration="11749000" />
       <workItem from="1548565757679" duration="16054000" />
-      <workItem from="1548673266555" duration="3556000" />
+      <workItem from="1548673266555" duration="5356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39374000" />
+    <option name="totallyTimeSpent" value="41174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -196,14 +194,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.50226927" visible="true" weight="0.26229507" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.50226927" weight="0.26229507" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38032788" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.27704918" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.10327869" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.0852459" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.4977307" side_tool="true" weight="0.9508197" />
       <window_info anchor="bottom" id="CMake" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.505295" weight="0.54754096" />
@@ -249,15 +247,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/leptjson.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="376">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="81" column="23" lean-forward="true" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#902#1241#0" />
+            <element signature="e#1242#1570#0" />
+            <element signature="e#1571#1899#0" />
+            <element signature="e#3588#3779#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/leptjson.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="179" column="5" selection-start-line="179" selection-start-column="5" selection-end-line="179" selection-end-column="5" />
+        <state relative-caret-position="169">
+          <caret line="210" column="5" selection-start-line="210" selection-start-column="5" selection-end-line="210" selection-end-column="5" />
           <folding>
             <element signature="e#0#2#0" />
             <element signature="e#473#578#0" />
@@ -270,21 +282,6 @@
             <element signature="e#4718#5321#0" />
             <element signature="e#5323#5799#0" />
             <element signature="e#5801#6033#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#902#1241#0" />
-            <element signature="e#1242#1570#0" />
-            <element signature="e#1571#1899#0" />
-            <element signature="e#2348#2962#0" />
-            <element signature="e#3588#3779#0" />
           </folding>
         </state>
       </provider>

@@ -76,7 +76,24 @@ static void test_parse_access_string() {
     lept_set_string(&leptJsonResult, "", 0);
     EXPECT_EQ_STRING("",lept_get_string(&leptJsonResult), lept_get_strlen(&leptJsonResult));
 }
-
+static void test_parse_access_boolen(){
+            LeptJsonResult leptJsonResult;
+            LEPT_TYPE_INIT(&leptJsonResult);
+            lept_set_boolen(&leptJsonResult, LEPT_FALSE);
+            EXPECT_EQ_actual(LEPT_FALSE, lept_get_boolen(&leptJsonResult), "%d");
+            lept_set_boolen(&leptJsonResult, LEPT_TRUE);
+            EXPECT_EQ_actual(LEPT_TRUE, lept_get_boolen(&leptJsonResult), "%d");
+            }
+static void test_parse_access_number(){
+            LeptJsonResult leptJsonResult;
+            LEPT_TYPE_INIT(&leptJsonResult);
+            lept_set_number(&leptJsonResult, 123341);
+            EXPECT_EQ_actual(123341, lept_get_number(&leptJsonResult), "%g");
+            lept_set_number(&leptJsonResult, 45e3);
+            EXPECT_EQ_actual(45e3, lept_get_number(&leptJsonResult), "%g");
+            lept_set_number(&leptJsonResult, 879966);
+            EXPECT_EQ_actual(879966, lept_get_number(&leptJsonResult), "%g");
+        }
 static void TestPareseFuc(){
     test_parse_character(LEPT_NULL, "null", LEPT_PARSE_OK);
     test_parse_character(LEPT_FALSE, "false", LEPT_PARSE_OK);
@@ -98,6 +115,8 @@ static void TestPareseFuc(){
     test_parse_error(LEPT_INVALID, " ", LEPT_PARSE_NO_VALUE);
     test_parse_string();
     test_parse_access_string();
+    test_parse_access_boolen();
+    test_parse_access_number();
 
 }
 
