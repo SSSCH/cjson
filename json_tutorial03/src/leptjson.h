@@ -31,7 +31,9 @@ typedef enum{
     LETP_PARSE_TYPE_NOT_SINGULAR,
     LEPT_PARSE_TYPE_ILLEGAL_NUMBER,
     LEPT_PARSE_TYPE_NUMBER_TOO_BIG,
-    LEPT_PARSE_MISS_QUOATION_MARK
+    LEPT_PARSE_MISS_QUOATION_MARK,
+    LEPT_PARSE_TYPE_ILLEGAL_STRING,
+    LEPT_PARSE_TYPE_INVALID_STRING_ESCAPE
 }RetType;
 //解析器
 int LeptJson_Parse(LeptJsonResult *result, const char *InputJson);
@@ -46,6 +48,6 @@ void lept_free(LeptJsonResult* leptJsonResult);
 char* lept_get_string(LeptJsonResult* leptJsonResult);
 size_t lept_get_strlen(LeptJsonResult *leptJsonResult);
 void lept_set_number(LeptJsonResult *leptJsonResult, double number);
-void lept_set_boolen(LeptJsonResult* leptJsonResult, LeptJsonType leptJsonType);
+void lept_set_boolen(LeptJsonResult* leptJsonResult, int boolen);
 double lept_get_number(LeptJsonResult* leptJsonResult);
 LeptJsonType lept_get_boolen(LeptJsonResult* leptJsonResult);

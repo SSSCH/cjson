@@ -3,12 +3,14 @@
 //
 #include <stdlib.h>
 #include <stdio.h>
+#include <crtdbg.h>
 #include "leptjson.h"
 static int test_count = 0;
 static int test_count_parsed = 0;
 
 static void test_parse_access_string();
-
+#define _WINDOWS
+#define _CRTDBG_MAP_ALLOC
 #define EXPECT_EQ_BASE(equality, expect, actual, object_format) \
         do{\
             test_count++;\
@@ -61,6 +63,7 @@ static void test_parse_string(){
             TEST_STRING("world", "\"world\"");
             TEST_STRING("sfs", "\"sfs\"");
             TEST_STRING("schsch", "\"schsch\"");
+            TEST_STRING("\" \\ \r \b \f \n \t / ", "\"\\\" \\\\ \\r \\b \\f \\n \\t \\/ \"");
 
 }
 
@@ -79,9 +82,9 @@ static void test_parse_access_string() {
 static void test_parse_access_boolen(){
             LeptJsonResult leptJsonResult;
             LEPT_TYPE_INIT(&leptJsonResult);
-            lept_set_boolen(&leptJsonResult, LEPT_FALSE);
+            lept_set_boolen(&leptJsonResult, 0);
             EXPECT_EQ_actual(LEPT_FALSE, lept_get_boolen(&leptJsonResult), "%d");
-            lept_set_boolen(&leptJsonResult, LEPT_TRUE);
+            lept_set_boolen(&leptJsonResult, 1);
             EXPECT_EQ_actual(LEPT_TRUE, lept_get_boolen(&leptJsonResult), "%d");
             }
 static void test_parse_access_number(){
@@ -122,6 +125,9 @@ static void TestPareseFuc(){
 
 
 int main() {
+#ifdef _WINDOWS
+            _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#endif
     TestPareseFuc();
     printf("test count:%d, test pass count:%d, pass rate: %3.2f%%\n", test_count/2, test_count_parsed/2, test_count_parsed*100.0/test_count);
     return 0;
