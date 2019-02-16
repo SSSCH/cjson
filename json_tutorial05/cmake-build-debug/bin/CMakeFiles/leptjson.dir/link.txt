@@ -1,0 +1,2 @@
+D:\software\clion\mingw64\bin\ar.exe qc libleptjson.a  CMakeFiles/leptjson.dir/leptjson.c.obj
+D:\software\clion\mingw64\bin\ranlib.exe libleptjson.a
