@@ -78,6 +78,7 @@ static  void test_parse_arrary(){
             EXPECT_EQ_actual(LEPT_PARSE_OK, LeptJson_Parse(&leptJsonResult, "[ null , 12,\"adf\" ]"), "%d");
             EXPECT_EQ_actual(LEPT_ARRAY, GetParseResult(&leptJsonResult) ,"%d");
             EXPECT_EQ_actual(3, lept_get_arrary_size(&leptJsonResult), "%d");
+            lept_free(&leptJsonResult);
             //EXPECT_EQ_actual(1, lept_get_arrary_by_index(&leptJsonResult, 0), "%d");
         }
 static void test_parse_access_string() {

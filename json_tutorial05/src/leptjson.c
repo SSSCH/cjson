@@ -244,7 +244,7 @@ int lept_parse_arrary(LeptJsonResult* result, intput_json *json){
                     result->a.size = size;
                     size *= sizeof(LeptJsonResult);
                     memcpy(result->a.elemts = (LeptJsonResult*)malloc(size), lept_context_pop(json, size), size);
-                return LEPT_PARSE_OK;
+                    return LEPT_PARSE_OK;
             } else{
                 return LEPT_PARSE_MISS_COMMA_OR_SQUARE_BRACKET;
             }
@@ -325,8 +325,16 @@ int GetParseResult(const LeptJsonResult *result){
 
 void lept_free(LeptJsonResult* leptJsonResult){
     assert(leptJsonResult != NULL);
-    if(leptJsonResult->leptjson_type == LEPT_STRING){
-        free(leptJsonResult->s.string);
+    switch (leptJsonResult->leptjson_type) {
+        case LEPT_STRING:
+            free(leptJsonResult->s.string);
+            break;
+        case LEPT_ARRAY:
+            for (size_t i = 0; i <leptJsonResult->a.size; ++i) {
+                lept_free(&leptJsonResult->a.elemts[i]);
+            }
+            free(leptJsonResult->a.elemts);
+            break;
     }
     leptJsonResult->leptjson_type = LEPT_NULL;
 }

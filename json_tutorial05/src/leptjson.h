@@ -20,13 +20,13 @@ struct LeptJsonResult{
         struct{
             char* string;
             size_t len;
-        }s;
+        }s;  //string
         struct{
             LeptJsonResult *elemts;
-            size_t size;
-        }a;
+            size_t size;   //size_t大小更随系统，32位的是4字节，64位则为8字节
+        }a; //arrary
     };
-    LeptJsonType leptjson_type
+    LeptJsonType leptjson_type;  //枚举一般四个字节
 };
 //解析完成后返回值类型
 typedef enum{
