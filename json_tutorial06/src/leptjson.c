@@ -126,7 +126,7 @@ static void* lept_context_push(intput_json* intputJson, size_t size){
 //返回字符串首地址指针
 static void* lept_context_pop(intput_json* intputJson, size_t len){
     assert(intputJson->top >= len);
-    void* ret = intputJson->stack + intputJson->top - len;
+    void* ret = intputJson->stack + (intputJson->top -= len);
     return ret;
 }
 
@@ -222,6 +222,7 @@ static int lept_parse_value(LeptJsonResult *result, const intput_json *intputJso
         default:
             return lept_parse_number(result, intputJson);
     }
+
 }
 
 //解析数组
@@ -265,12 +266,13 @@ int lept_parse_arrary(LeptJsonResult* result, intput_json *json){
 
 }
 int lept_parse_object(LeptJsonResult* result, intput_json* json){
-            size_t size = 0;
+            size_t size = 0; //member count
             int ret = 0;
             char* string = "";
-            LeptJsonMember leptJsonMember;
+            LeptJsonMember leptJsonMember; //防止内存泄漏的重要原则：在哪一层/哪一地方创建的变量/申请的内存，就在那边的结尾记得free（）；
             EXPECT_EQ(json, '{');
             for(;;){
+                lept_parse_whitespcae(json);
                 if(*json->json == '}'){
                     result->leptjson_type = LEPT_OBJECT;
                     result->o.m = NULL;
@@ -279,38 +281,42 @@ int lept_parse_object(LeptJsonResult* result, intput_json* json){
                     }
                 //解析键
                 if(*json->json != '"'){
-                    return LEPT_PAESE_MISS_KEY;
+                    ret = LEPT_PAESE_MISS_KEY;
+                    break;//end for(;;)
                 }
+                leptJsonMember.k = NULL; //將其初始化为空，这样在解析成功后下一次的循环进来不会受到影响
                 if((ret=_lept_parse_string(&string, json, &leptJsonMember.klen)) != LEPT_PARSE_OK){
-                    return LEPT_PARSE_TYPE_ILLEGAL_STRING;
+                    ret = LEPT_PARSE_TYPE_ILLEGAL_STRING;
+                    break;
                 }
                 //将memb的key值保存到临时变量
                 memcpy(leptJsonMember.k = (char*)malloc(leptJsonMember.klen), string, leptJsonMember.klen);
-                leptJsonMember.k[leptJsonMember.klen] = '\0';
+                leptJsonMember.k[leptJsonMember.klen] = '\0'; //添加字符串結束標志
                 lept_parse_whitespcae(json);
                 //检查冒号：
                 if(*json->json != ':'){
-                    return LEPT_PARSE_MISS_KEY_VALUE;
+                    ret = LEPT_PARSE_MISS_KEY_VALUE;
+                    break;
                 }
-                json->json++;
+                json->json++; //jump ：
                 lept_parse_whitespcae(json);
-                //解析键值，把键值保存至临时变量中
+                //到这一步说明对象成员解析成功，此时键值保存在临时变量（kvalue）中
                 if((ret = lept_parse_value(&leptJsonMember.kvalue, json)) != LEPT_PARSE_OK){
-                    return  ret;
+                    break;
                 }
-                //將保存在临时变量的member压栈
+                //將保存在临时变量的leptjsonmember即时压栈
                 memcpy(lept_context_push(json, sizeof(leptJsonMember)), &leptJsonMember, sizeof(leptJsonMember));
-                size++;
+                size++; //leptjsonmember count+1
                 lept_parse_whitespcae(json);
                 //遇到逗号，
                 if(*json->json == ','){
                     json->json++;
                     lept_parse_whitespcae(json);
                 }
-                //遇到右花括号
+                //遇到右花括号,对象解析结束
                 else if(*json->json == '}'){
                         json->json++;
-                        size_t s = sizeof(leptJsonMember)*size;
+                        size_t s = sizeof(leptJsonMember)*size; //s为对象占用总字节数
                         result->leptjson_type = LEPT_OBJECT;
                         result->o.size = size;
                         memcpy((result->o.m = (LeptJsonMember*)malloc(s)), lept_context_pop(json, s), s);
@@ -318,12 +324,19 @@ int lept_parse_object(LeptJsonResult* result, intput_json* json){
                 }
                 else{
                     ret = LEPT_PARSE_MISS_COMMA_OR_CURLY_BRACKET;
-                    return ret;
+                    break;
                 }
             }
-
-
-
+  //出现任何错误将走到这里
+    if (leptJsonMember.k != NULL)
+        free(leptJsonMember.k);//回收临时变量的堆栈
+   for (int i = 0; i < size; ++i) { //回收自定义的堆栈size个leptjosnmember
+       LeptJsonMember* Member = (LeptJsonMember*)lept_context_pop(json, sizeof(leptJsonMember));
+       free(&Member->k);
+       lept_free(&Member->kvalue);
+   }
+    result->leptjson_type = LEPT_NULL;
+    return ret;
 }
 //根据utf-8码表解码
 void lept_parse_utf8(intput_json *json, unsigned int u) {

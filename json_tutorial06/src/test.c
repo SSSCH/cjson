@@ -119,6 +119,17 @@ static void test_parse_object(){
             EXPECT_EQ_STRING("true", lept_get_member_key(&leptJsonResult, 0), 4);
             EXPECT_EQ_actual(4, lept_get_member_keylen(&leptJsonResult, 0), "%d");
             EXPECT_EQ_actual(1, lept_get_number(lept_get_member(&leptJsonResult, 0)), "%g");
+            EXPECT_EQ_actual(LEPT_PARSE_OK, LeptJson_Parse(&leptJsonResult,
+                                            " { "
+                                            "\"n\" : null , "
+                                            "\"f\" : false , "
+                                            "\"t\" : true , "
+                                            "\"i\" : 123 , "
+                                            "\"s\" : \"abc\", "
+                                            "\"a\" : [ 1, 2, 3 ],"
+                                            "\"o\" : { \"1\" : 1, \"2\" : 2, \"3\" : 3 }"
+                                            " } "), "%d");
+            lept_free(&leptJsonResult);
         }
 static void TestPareseFuc(){
     test_parse_character(LEPT_NULL, "null", LEPT_PARSE_OK);

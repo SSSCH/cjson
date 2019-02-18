@@ -18,6 +18,16 @@
       <change beforePath="$PROJECT_DIR$/../json_tutorial03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../json_tutorial03/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../json_tutorial04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../json_tutorial04/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../json_tutorial05/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../json_tutorial05/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/bin/CMakeFiles/json_tutorial06.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/bin/CMakeFiles/json_tutorial06.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/bin/CMakeFiles/json_tutorial06.dir/leptjson.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/bin/CMakeFiles/json_tutorial06.dir/leptjson.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/bin/CMakeFiles/json_tutorial06.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/bin/CMakeFiles/json_tutorial06.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/bin/CMakeFiles/json_tutorial06.dir/test.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/bin/CMakeFiles/json_tutorial06.dir/test.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/bin/CMakeFiles/leptjson.dir/leptjson.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/bin/CMakeFiles/leptjson.dir/leptjson.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/bin/json_tutorial06.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/bin/json_tutorial06.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/bin/libleptjson.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/bin/libleptjson.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leptjson.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/leptjson.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,11 +53,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/leptjson.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="288" column="59" selection-start-line="288" selection-start-column="59" selection-end-line="288" selection-end-column="59" />
+            <state relative-caret-position="368">
+              <caret line="325" column="26" lean-forward="true" selection-start-line="325" selection-start-column="26" selection-end-line="325" selection-end-column="26" />
               <folding>
                 <element signature="e#0#2#0" />
               </folding>
@@ -55,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            <state relative-caret-position="85">
+              <caret line="131" column="39" selection-start-line="131" selection-start-column="39" selection-end-line="131" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -67,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/leptjson.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
+            <state relative-caret-position="227">
+              <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -90,8 +100,8 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/leptjson.h" />
-        <option value="$PROJECT_DIR$/src/leptjson.c" />
         <option value="$PROJECT_DIR$/src/test.c" />
+        <option value="$PROJECT_DIR$/src/leptjson.c" />
       </list>
     </option>
   </component>
@@ -161,12 +171,13 @@
       <workItem from="1550306441298" duration="12800000" />
       <workItem from="1550381809788" duration="4153000" />
       <workItem from="1550390811899" duration="295000" />
-      <workItem from="1550391150473" duration="16035000" />
+      <workItem from="1550391150473" duration="16468000" />
+      <workItem from="1550472823149" duration="6019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55559000" />
+    <option name="totallyTimeSpent" value="62011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -177,8 +188,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.452459" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.34590164" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26557377" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.24262296" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -207,23 +218,13 @@
         </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/leptjson.c</url>
-          <line>324</line>
+          <line>335</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/leptjson.c</url>
-          <line>315</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/leptjson.c</url>
-          <line>287</line>
+          <line>291</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/leptjson.c</url>
-          <line>283</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -264,25 +265,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/leptjson.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/leptjson.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="288" column="59" selection-start-line="288" selection-start-column="59" selection-end-line="288" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#2#0" />
-          </folding>
+        <state relative-caret-position="227">
+          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        <state relative-caret-position="85">
+          <caret line="131" column="39" selection-start-line="131" selection-start-column="39" selection-end-line="131" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/leptjson.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="325" column="26" lean-forward="true" selection-start-line="325" selection-start-column="26" selection-end-line="325" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
         </state>
       </provider>
     </entry>
