@@ -150,7 +150,12 @@ static void test_RoundParse(){
              EXPECT_EQ_ROUNDPARSE("null");
              EXPECT_EQ_ROUNDPARSE("false");
              EXPECT_EQ_ROUNDPARSE("true");
-             EXPECT_EQ_ROUNDPARSE("1221");
+             EXPECT_EQ_ROUNDPARSE("1221.666");
+             EXPECT_EQ_ROUNDPARSE("\"\\t \\\\ \\r \\f \\n / \\\" sadfasd\"");
+             EXPECT_EQ_ROUNDPARSE("[]");
+            EXPECT_EQ_ROUNDPARSE("[null,false,true,123,\"abc\",[1,2,3]]");
+            EXPECT_EQ_ROUNDPARSE("{}");
+            EXPECT_EQ_ROUNDPARSE("{\"n\":null,\"f\":false,\"t\":true,\"i\":123,\"s\":\"abc\",\"a\":[1,2,3],\"o\":{\"1\":1,\"2\":2,\"3\":3}}");
 
         }
 

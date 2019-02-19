@@ -275,6 +275,7 @@ int lept_parse_object(LeptJsonResult* result, intput_json* json){
             for(;;){
                 lept_parse_whitespcae(json);
                 if(*json->json == '}'){
+                    json->json++;
                     result->leptjson_type = LEPT_OBJECT;
                     result->o.m = NULL;
                     result->o.size = 0;
@@ -492,34 +493,77 @@ LeptJsonResult* lept_get_member(LeptJsonResult* leptJsonResult, size_t index){
     assert((leptJsonResult != NULL) && (index <= leptJsonResult->o.size));
     return &leptJsonResult->o.m[index].kvalue;
 }
-int lept_stringfy(LeptJsonResult* jsonResult, char** ResultString, size_t* len){
-    int buffer[32] = {0};
-    int lenth = 0;
-    intput_json tmpstack;
-    tmpstack.top = 0;
-    tmpstack.size = LEPT_PARSE_STACK_INIT_SIZE;
-    tmpstack.stack = malloc(LEPT_PARSE_STACK_INIT_SIZE);
+void _lept_stringfy_string(const char* string, size_t  len ,intput_json* tmpstack){
+    for (int i = 0; i < len; ++i) {
+        unsigned char s = (string[i]);
+        switch(string[i]){
+            case '\"': PUTS(tmpstack, "\\\"", 2);break;
+            case '\\': PUTS(tmpstack, "\\\\", 2);break;
+            case '\t': PUTS(tmpstack, "\\t", 2);break;
+            case '\r': PUTS(tmpstack, "\\r", 2);break;
+            case '\n': PUTS(tmpstack, "\\n", 2);break;
+            case '\f': PUTS(tmpstack, "\\f", 2);break;
+            default:
+                if(s < 0x20){
+                    sprintf(lept_context_push(tmpstack, 6), "\\u%04x", s);break;
+                } else{
+                    PUTC(tmpstack, s);
+                    break;
+                }
+        }
+
+    }
+}
+int _lept_stringfy(LeptJsonResult* jsonResult, intput_json* tmpstack){
     switch (jsonResult->leptjson_type) {
         case LEPT_FALSE :
-            PUTS(&tmpstack,"false", 5);
-            break;
+            PUTS(tmpstack,"false", 5);break;
         case LEPT_NULL:
-            PUTS(&tmpstack,"null", 4);
-            break;
+            PUTS(tmpstack,"null", 4);break;
         case LEPT_TRUE :
-            PUTS(&tmpstack,"true", 4);
-            break;
+            PUTS(tmpstack,"true", 4);break;
         case LEPT_NUMBER :
-            tmpstack.top -= 32 - sprintf(lept_context_push(&tmpstack, 32), "%.17g", jsonResult->number);
+            tmpstack->top -= 32 - sprintf(lept_context_push(tmpstack, 32), "%.7g", jsonResult->number);break;
             // tmpstack.top = tmpstack.top -32 + sprintf(lept_context_push(&tmpstack, 32), "%.17g", jsonResult->number);
-            break;
         case LEPT_OBJECT:
+            PUTC(tmpstack, '{');
+            for (int j = 0; j < jsonResult->o.size; ++j) {
+                if (j != 0) {PUTC(tmpstack, ',');}
+                PUTC(tmpstack, '"');
+                _lept_stringfy_string(jsonResult->o.m[j].k, jsonResult->o.m[j].klen, tmpstack);
+                PUTC(tmpstack,'\"');
+                PUTC(tmpstack, ':');
+                if(!_lept_stringfy(&jsonResult->o.m[j].kvalue, tmpstack))
+                    return -1;
+            }
+            PUTC(tmpstack, '}');
+            break;
         case LEPT_STRING:
+            PUTC(tmpstack, '\"');
+            _lept_stringfy_string(jsonResult->s.string,jsonResult->s.len, tmpstack);
+            //PUTS(&tmpstack, jsonResult->s.string, jsonResult->s.len);
+            PUTC(tmpstack, '\"');
+            break;
         case LEPT_ARRAY:
+            PUTC(tmpstack, '[');
+            for (int i = 0; i <jsonResult->a.size; ++i) {
+                if (i != 0) {PUTC(tmpstack, ',');}
+                _lept_stringfy(&jsonResult->a.elemts[i], tmpstack);
+            }
+            PUTC(tmpstack, ']');
+            break;
         default :
             assert(0 && "LEPT_INVALID");
             return -1;
     }
+}
+int lept_stringfy(LeptJsonResult* jsonResult, char** ResultString, size_t* len){
+    intput_json tmpstack;
+    tmpstack.top = 0;
+    tmpstack.size = LEPT_PARSE_STACK_INIT_SIZE;
+    tmpstack.stack = malloc(LEPT_PARSE_STACK_INIT_SIZE);
+    if(!_lept_stringfy(jsonResult, &tmpstack))
+    return -1;
     *len = tmpstack.top;
     *ResultString = (char*)malloc(tmpstack.size);
     memcpy(*ResultString, tmpstack.stack, tmpstack.top);
